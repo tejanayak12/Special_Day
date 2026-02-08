@@ -456,9 +456,25 @@ body {
     border-width: 6px;
   }
 
+  .button-container {
+    flex-direction: row;
+    gap: 1rem;
+    min-height: 200px;
+    /* Increased height to give room for moving No button */
+    width: 100%;
+    padding: 0 1rem;
+    align-items: flex-start;
+    /* Ensure Yes button stays at top */
+  }
+
   .btn {
-    padding: 1rem 2rem;
-    font-size: 1.2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    min-width: 120px;
+  }
+
+  .btn-yes {
+    z-index: 10;
   }
 
   .time-grid {
