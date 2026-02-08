@@ -1,8 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const LoveLetter = () => {
+const LoveLetter = ({ onTriggerFinale }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [hasOpened, setHasOpened] = useState(false);
+
+    const handleToggle = () => {
+        if (!isOpen) {
+            setIsOpen(true);
+            setHasOpened(true);
+        } else {
+            setIsOpen(false);
+            if (hasOpened) {
+                onTriggerFinale();
+            }
+        }
+    };
 
     const letterVariants = {
         closed: { scale: 1, rotate: 0 },
@@ -18,7 +31,7 @@ const LoveLetter = () => {
         <div className="love-letter-container">
             <motion.div
                 className="envelope-wrapper"
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={handleToggle}
                 variants={letterVariants}
                 animate={isOpen ? "open" : "closed"}
                 whileHover={{ scale: 1.1 }}

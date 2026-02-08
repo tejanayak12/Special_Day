@@ -550,3 +550,70 @@ body {
     left: -30px;
   }
 }
+
+/* Universe Finale Styles */
+.universe-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+  animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+.final-message {
+  font-family: 'Dancing Script', cursive;
+  color: white;
+  text-align: center;
+  z-index: 10001;
+  padding: 2rem;
+  text-shadow: 0 0 20px #ff4d6d, 0 0 40px #ff758f;
+}
+
+.final-message h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.final-message p {
+  font-size: 2rem;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .final-message h1 {
+    font-size: 2.5rem;
+  }
+
+  .final-message p {
+    font-size: 1.5rem;
+  }
+}

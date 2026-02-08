@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import confetti from 'canvas-confetti';
 import { motion } from 'framer-motion';
 import LoveLetter from './LoveLetter';
 import FloatingElements from './FloatingElements';
 import RelationshipCounter from './RelationshipCounter';
+import UniverseFinale from './UniverseFinale';
 
 const SuccessPage = () => {
+    const [showUniverse, setShowUniverse] = useState(false);
+
     useEffect(() => {
         const duration = 15 * 1000;
         const animationEnd = Date.now() + duration;
@@ -59,8 +62,10 @@ const SuccessPage = () => {
 
                 <RelationshipCounter startDate="2023-04-04" /> {/* April 4, 2023 is exactly 1041 days before Feb 8, 2026 */}
 
-                <LoveLetter />
+                <LoveLetter onTriggerFinale={() => setShowUniverse(true)} />
             </div>
+
+            {showUniverse && <UniverseFinale />}
 
 
             <footer className="footer">
