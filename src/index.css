@@ -456,7 +456,12 @@ body {
 
   .couple-pic {
     width: 95%;
+    max-height: 350px;
+    /* Constrain height for long portrait photos */
+    object-fit: cover;
+    /* Maintain aspect ratio beautifully */
     border-width: 6px;
+    margin-bottom: 1.5rem;
   }
 
   .button-container {

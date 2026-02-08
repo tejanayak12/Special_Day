@@ -42,7 +42,7 @@ const SuccessPage = () => {
                     animate={{ scale: 1 }}
                     transition={{ type: "spring", stiffness: 100 }}
                 >
-                    <img src="/assets/5J2A1184.JPG" className="couple-pic" alt="Our Best Decision" />
+                    <img src="/assets/IMG-20250917-WA0029.jpg" className="couple-pic" alt="Our Best Decision" />
                     <h1 className="title" style={{ fontSize: '4rem' }}>
                         You've made me the <br /><span>happiest person alive! ❤️</span>
                     </h1>
